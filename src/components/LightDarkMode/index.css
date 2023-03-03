@@ -1,0 +1,38 @@
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+.white-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+.button {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Roboto';
+  color: #000000;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 8px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #000000;
+}
