@@ -1,27 +1,43 @@
 import {Component} from 'react'
-
 import './index.css'
 
 class LightDarkMode extends Component {
-  state = {isDarkMode: true}
+  state = {isDark: true}
 
-  changeMode = () => {
-    this.setState(prevState => ({isDarkMode: !prevState.isDarkMode}))
+  onChangeColor = () => {
+    this.setState(prevState => ({
+      isDark: !prevState.isDark,
+    }))
   }
 
   render() {
-    const {isDarkMode} = this.state
-    const card = isDarkMode ? 'dark-card' : 'white-card'
-    const heading = isDarkMode ? 'white-heading' : 'dark-heading'
-    const text = isDarkMode ? 'Light Mode' : 'Dark Mode'
+    const {isDark} = this.state
+    console.log(isDark)
     return (
       <div className="bg-container">
-        <div className={card}>
-          <h1 className={heading}>Click To Change Mode</h1>
-          <button type="button" className="button" onClick={this.changeMode}>
-            {text}
-          </button>
-        </div>
+        {isDark ? (
+          <div className="dark-card">
+            <p className="dark-para">Click To Change Mode</p>
+            <button
+              className="button"
+              type="button"
+              onClick={this.onChangeColor}
+            >
+              Light Mode
+            </button>
+          </div>
+        ) : (
+          <div className="light-card">
+            <p className="light-para">Click To Change Mode</p>
+            <button
+              className="button"
+              type="button"
+              onClick={this.onChangeColor}
+            >
+              Dark Mode
+            </button>
+          </div>
+        )}
       </div>
     )
   }
